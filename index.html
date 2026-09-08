@@ -10,6 +10,7 @@
 <x-dc>
 
 <helmet>
+
 <title>Figari Parrilla Uruguaya | Parrilla a lenha com carne uruguaia em Joinville</title>
 
 <meta
@@ -74,22 +75,19 @@
 
   /* ======================================================
      TRATAMENTO DAS FOTOS
-     Não altera tamanho, grid, posição ou espaçamento.
      ====================================================== */
 
-
-  /*
-   * Fotos grandes
-   * zoom muito discreto no hover
-   */
   .cinematic-photo {
     backface-visibility: hidden;
     transform: translateZ(0) scale(1.001);
+
     transition:
       transform 1800ms cubic-bezier(.18, .72, .22, 1),
       filter 700ms ease;
+
     will-change: transform;
   }
+
 
   @media (hover: hover) and (pointer: fine) {
 
@@ -100,14 +98,16 @@
   }
 
 
-  /*
-   * Galeria
-   */
+  /* ======================================================
+     GALERIA
+     ====================================================== */
+
   #galeria .gallery-card {
     position: relative;
     overflow: hidden;
     isolation: isolate;
     background: #25160F;
+
     box-shadow:
       0 3px 8px rgba(35, 20, 10, .08),
       0 10px 30px rgba(35, 20, 10, .04);
@@ -118,10 +118,6 @@
   }
 
 
-  /*
-   * camada sobre a fotografia:
-   * praticamente invisível, só aumenta profundidade
-   */
   #galeria .gallery-card::after {
     content: "";
     position: absolute;
@@ -159,25 +155,28 @@
   }
 
 
-  /*
-   * Hover da galeria
-   */
   @media (hover: hover) and (pointer: fine) {
 
     #galeria .gallery-card:hover {
+
       box-shadow:
         0 6px 14px rgba(35, 20, 10, .10),
         0 18px 42px rgba(35, 20, 10, .13);
+
     }
 
     #galeria .gallery-card:hover img {
-      transform: translateZ(0) scale(1.038);
+
+      transform:
+        translateZ(0)
+        scale(1.038);
 
       filter:
         contrast(1.09)
         saturate(1.07)
         sepia(.04)
         brightness(.98);
+
     }
 
     #galeria .gallery-card:hover::after {
@@ -187,19 +186,23 @@
   }
 
 
-  /*
-   * Pequeno brilho natural nas fotos,
-   * sem aparência artificial.
-   */
+  /* ======================================================
+     LUZ SUAVE DAS FOTOS
+     ====================================================== */
+
   .photo-soft-light {
     position: relative;
   }
 
   .photo-soft-light::after {
+
     content: "";
+
     position: absolute;
     inset: 0;
+
     z-index: 2;
+
     pointer-events: none;
 
     background:
@@ -209,19 +212,102 @@
         transparent 38%,
         rgba(20, 8, 3, .04)
       );
+
   }
 
 
-  /*
-   * Respeita usuários que desativam animações
-   */
+  /* ======================================================
+     MOBILE
+     HEADER + WHATSAPP SÓ APÓS ROLAR
+     ====================================================== */
+
+  .mobile-scroll-header {
+    transition:
+      transform 380ms cubic-bezier(.2,.7,.2,1),
+      opacity 280ms ease;
+  }
+
+  .mobile-bottom-reserve {
+    transition:
+      transform 380ms cubic-bezier(.2,.7,.2,1),
+      opacity 280ms ease;
+  }
+
+
+  @media (max-width: 759px) {
+
+    /*
+     * No mobile a foto começa imediatamente
+     * no topo da tela.
+     */
+    #topo {
+      margin-top: 0 !important;
+    }
+
+
+    /*
+     * Header escondido inicialmente.
+     */
+    .mobile-scroll-header {
+      transform: translateY(-100%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+
+    /*
+     * Aparece depois que o usuário rola.
+     */
+    .mobile-scroll-header.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+
+    /*
+     * Botão inferior escondido inicialmente.
+     */
+    .mobile-bottom-reserve {
+      transform: translateY(110%);
+      opacity: 0;
+      pointer-events: none;
+    }
+
+
+    /*
+     * Aparece depois que o usuário rola.
+     */
+    .mobile-bottom-reserve.is-visible {
+      transform: translateY(0);
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+  }
+
+
+  /* ======================================================
+     ACESSIBILIDADE
+     ====================================================== */
+
   @media (prefers-reduced-motion: reduce) {
 
     .cinematic-photo,
     #galeria .gallery-card,
-    #galeria .gallery-card img {
+    #galeria .gallery-card img,
+    .mobile-scroll-header,
+    .mobile-bottom-reserve {
+
       transition: none !important;
+
+    }
+
+    .cinematic-photo,
+    #galeria .gallery-card img {
+
       transform: none !important;
+
     }
 
   }
@@ -229,7 +315,9 @@
 </style>
 
 
+
 <script type="application/ld+json">
+
 {
   "@context": "https://schema.org",
   "@type": "Restaurant",
@@ -237,6 +325,7 @@
   "servesCuisine": "Uruguayan",
   "priceRange": "R$ 80 a R$ 160",
   "telephone": "+5547989042442",
+
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Rua Joaçaba, 74, Sala 6",
@@ -245,41 +334,56 @@
     "postalCode": "89221-340",
     "addressCountry": "BR"
   },
+
   "openingHoursSpecification": [
+
     {
       "@type": "OpeningHoursSpecification",
+
       "dayOfWeek": [
         "Wednesday",
         "Thursday",
         "Friday"
       ],
+
       "opens": "11:00",
       "closes": "15:00"
     },
+
     {
       "@type": "OpeningHoursSpecification",
+
       "dayOfWeek": [
         "Thursday",
         "Friday",
         "Saturday"
       ],
+
       "opens": "18:00",
       "closes": "23:00"
     }
+
   ],
+
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.8",
     "reviewCount": "137"
   },
-  "acceptsReservations": "https://wa.me/5547989042442",
+
+  "acceptsReservations":
+    "https://wa.me/5547989042442",
+
   "sameAs": [
     "https://instagram.com/figariparrilla"
   ]
+
 }
+
 </script>
 
 </helmet>
+
 
 
 <div
@@ -292,9 +396,12 @@
 >
 
 
-  <!-- HEADER -->
+  <!-- ======================================================
+       HEADER
+       ====================================================== -->
 
   <header
+    class="mobile-scroll-header {{ mobileChromeClass }}"
     style="
       position: fixed;
       top: 0;
@@ -367,7 +474,10 @@
       >
 
 
-        <sc-if value="{{ isNarrow }}" hint-placeholder-val="{{ false }}">
+        <sc-if
+          value="{{ isNarrow }}"
+          hint-placeholder-val="{{ false }}"
+        >
 
           <div
             style="
@@ -382,6 +492,7 @@
               target="_blank"
               rel="noopener"
               aria-label="Reservar pelo WhatsApp"
+
               style="
                 display: flex;
                 align-items: center;
@@ -401,7 +512,9 @@
                 fill="currentColor"
                 aria-hidden="true"
               >
+
                 <path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path>
+
               </svg>
 
             </a>
@@ -411,6 +524,7 @@
               type="button"
               onClick="{{ toggleMenu }}"
               aria-label="Abrir menu"
+
               style="
                 display: flex;
                 flex-direction: column;
@@ -456,7 +570,11 @@
         </sc-if>
 
 
-        <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+
+        <sc-if
+          value="{{ isWide }}"
+          hint-placeholder-val="{{ true }}"
+        >
 
           <div
             style="
@@ -468,6 +586,7 @@
 
             <a
               href="#autenticidade"
+
               style="
                 font-family: 'Roboto Slab', serif;
                 font-size: 12px;
@@ -480,8 +599,10 @@
               A casa
             </a>
 
+
             <a
               href="#parrilla"
+
               style="
                 font-family: 'Roboto Slab', serif;
                 font-size: 12px;
@@ -494,8 +615,10 @@
               A parrilla
             </a>
 
+
             <a
               href="#galeria"
+
               style="
                 font-family: 'Roboto Slab', serif;
                 font-size: 12px;
@@ -508,8 +631,10 @@
               Fotos
             </a>
 
+
             <a
               href="#local"
+
               style="
                 font-family: 'Roboto Slab', serif;
                 font-size: 12px;
@@ -528,6 +653,7 @@
               target="_blank"
               rel="noopener"
               aria-label="Instagram da Figari Parrilla"
+
               style="
                 color: #25160F;
                 display: flex;
@@ -576,12 +702,17 @@
         </sc-if>
 
 
-        <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+
+        <sc-if
+          value="{{ isWide }}"
+          hint-placeholder-val="{{ true }}"
+        >
 
           <a
             href="{{ waUrl }}"
             target="_blank"
             rel="noopener"
+
             style="
               display: flex;
               align-items: center;
@@ -597,6 +728,7 @@
               text-transform: uppercase;
               transition: background 160ms ease;
             "
+
             style-hover="
               background: #6F2516;
               color: #FFF8E9;
@@ -610,7 +742,9 @@
               fill="currentColor"
               aria-hidden="true"
             >
+
               <path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path>
+
             </svg>
 
             Reservar
@@ -618,6 +752,7 @@
           </a>
 
         </sc-if>
+
 
       </nav>
 
@@ -627,9 +762,14 @@
 
 
 
-  <!-- MENU MOBILE -->
+  <!-- ======================================================
+       MENU MOBILE
+       ====================================================== -->
 
-  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+  <sc-if
+    value="{{ menuOpen }}"
+    hint-placeholder-val="{{ false }}"
+  >
 
     <nav
       style="
@@ -649,6 +789,7 @@
       <a
         href="#autenticidade"
         onClick="{{ closeMenu }}"
+
         style="
           font-family: 'Roboto Slab', serif;
           font-size: 15px;
@@ -667,6 +808,7 @@
       <a
         href="#parrilla"
         onClick="{{ closeMenu }}"
+
         style="
           font-family: 'Roboto Slab', serif;
           font-size: 15px;
@@ -685,6 +827,7 @@
       <a
         href="#galeria"
         onClick="{{ closeMenu }}"
+
         style="
           font-family: 'Roboto Slab', serif;
           font-size: 15px;
@@ -703,6 +846,7 @@
       <a
         href="#local"
         onClick="{{ closeMenu }}"
+
         style="
           font-family: 'Roboto Slab', serif;
           font-size: 15px;
@@ -723,6 +867,7 @@
         target="_blank"
         rel="noopener"
         onClick="{{ closeMenu }}"
+
         style="
           display: flex;
           align-items: center;
@@ -781,12 +926,15 @@
 
 
 
-  <!-- HERO -->
+  <!-- ======================================================
+       HERO
+       ====================================================== -->
 
   <section
     id="topo"
     data-photo-frame
     class="photo-soft-light"
+
     style="
       position: relative;
       margin-top: 76px;
@@ -801,6 +949,7 @@
       class="cinematic-photo"
       src="img/parrilla-cortes-crus.jpg"
       alt="Cortes de carne uruguaia sobre a grelha da parrilla a lenha da Figari"
+
       style="
         position: absolute;
         inset: 0;
@@ -890,6 +1039,7 @@
           href="{{ waUrl }}"
           target="_blank"
           rel="noopener"
+
           style="
             display: flex;
             align-items: center;
@@ -905,6 +1055,7 @@
             text-transform: uppercase;
             transition: background 160ms ease;
           "
+
           style-hover="
             background: #6F2516;
             color: #FFF8E9;
@@ -918,7 +1069,9 @@
             fill="currentColor"
             aria-hidden="true"
           >
+
             <path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path>
+
           </svg>
 
           Reservar mesa
@@ -928,6 +1081,7 @@
 
         <a
           href="#parrilla"
+
           style="
             display: inline-block;
             color: #FFF8E9;
@@ -941,6 +1095,7 @@
             text-transform: uppercase;
             transition: background 160ms ease;
           "
+
           style-hover="
             background: rgba(255, 248, 233, .14);
             color: #FFF8E9;
@@ -957,7 +1112,9 @@
 
 
 
-  <!-- PROVA SOCIAL -->
+  <!-- ======================================================
+       PROVA SOCIAL
+       ====================================================== -->
 
   <section
     style="
@@ -1062,7 +1219,10 @@
 
 
 
-  <!-- DEPOIMENTOS -->
+  <!-- ======================================================
+       QUEM SENTA AQUI VOLTA
+       SEM CARDS BRANCOS
+       ====================================================== -->
 
   <section
     style="
@@ -1080,6 +1240,7 @@
 
       <h2
         data-reveal="1"
+
         style="
           font-family: 'Roboto Slab', Georgia, serif;
           font-weight: 900;
@@ -1107,11 +1268,12 @@
 
         <figure
           data-reveal="1"
+
           style="
             margin: 0;
-            background: #FFFDF8;
-            border: 1px solid rgba(60, 30, 15, .12);
-            box-shadow: 0 2px 5px rgba(35, 20, 10, .08);
+            background: transparent;
+            border: none;
+            box-shadow: none;
             padding: 28px;
           "
         >
@@ -1148,11 +1310,12 @@
 
         <figure
           data-reveal="1"
+
           style="
             margin: 0;
-            background: #FFFDF8;
-            border: 1px solid rgba(60, 30, 15, .12);
-            box-shadow: 0 2px 5px rgba(35, 20, 10, .08);
+            background: transparent;
+            border: none;
+            box-shadow: none;
             padding: 28px;
           "
         >
@@ -1189,11 +1352,12 @@
 
         <figure
           data-reveal="1"
+
           style="
             margin: 0;
-            background: #FFFDF8;
-            border: 1px solid rgba(60, 30, 15, .12);
-            box-shadow: 0 2px 5px rgba(35, 20, 10, .08);
+            background: transparent;
+            border: none;
+            box-shadow: none;
             padding: 28px;
           "
         >
@@ -1235,10 +1399,13 @@
 
 
 
-  <!-- A CASA -->
+  <!-- ======================================================
+       A CASA
+       ====================================================== -->
 
   <section
     id="autenticidade"
+
     style="
       background: #38251A;
       color: #FFF8E9;
@@ -1251,7 +1418,6 @@
         grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));
       "
     >
-
 
       <div
         style="
@@ -1348,6 +1514,7 @@
       <div
         data-photo-frame
         class="photo-soft-light"
+
         style="
           position: relative;
           min-height: 420px;
@@ -1359,6 +1526,7 @@
           class="cinematic-photo"
           src="img/parrilla-lenha-acesa.png"
           alt="Parrilla a lenha acesa da Figari com cortes na grelha e prateleira de bebidas"
+
           style="
             position: absolute;
             inset: 0;
@@ -1377,12 +1545,15 @@
 
 
 
-  <!-- PARRILLA -->
+  <!-- ======================================================
+       PARRILLA
+       ====================================================== -->
 
   <section
     id="parrilla"
     data-photo-frame
     class="photo-soft-light"
+
     style="
       position: relative;
       min-height: min(70vh, 560px);
@@ -1396,6 +1567,7 @@
       class="cinematic-photo"
       src="img/bife-de-chorizo.jpg"
       alt="Bife de chorizo uruguaio fatiado na tábua com sal grosso"
+
       style="
         position: absolute;
         inset: 0;
@@ -1432,6 +1604,7 @@
 
       <div
         data-reveal="1"
+
         style="
           background: rgba(37, 22, 15, .94);
           color: #FFF8E9;
@@ -1520,6 +1693,7 @@
           href="{{ waUrl }}"
           target="_blank"
           rel="noopener"
+
           style="
             display: inline-block;
             margin-top: 26px;
@@ -1533,6 +1707,7 @@
             text-transform: uppercase;
             transition: background 160ms ease;
           "
+
           style-hover="
             background: rgba(255, 248, 233, .14);
             color: #FFF8E9;
@@ -1549,9 +1724,14 @@
 
 
 
-  <!-- ALMOÇO EXECUTIVO -->
+  <!-- ======================================================
+       ALMOÇO EXECUTIVO
+       ====================================================== -->
 
-  <sc-if value="{{ mostrarAlmoco }}" hint-placeholder-val="{{ true }}">
+  <sc-if
+    value="{{ mostrarAlmoco }}"
+    hint-placeholder-val="{{ true }}"
+  >
 
     <section
       style="
@@ -1608,6 +1788,7 @@
           href="{{ waUrlAlmoco }}"
           target="_blank"
           rel="noopener"
+
           style="
             background: #832E1A;
             border: 1px solid #6F2516;
@@ -1620,6 +1801,7 @@
             text-transform: uppercase;
             transition: background 160ms ease;
           "
+
           style-hover="
             background: #6F2516;
             color: #FFF8E9;
@@ -1636,10 +1818,13 @@
 
 
 
-  <!-- GALERIA -->
+  <!-- ======================================================
+       GALERIA
+       ====================================================== -->
 
   <section
     id="galeria"
+
     style="
       background: #FCF1DB;
       padding: clamp(48px, 7vw, 78px) 0;
@@ -1693,6 +1878,7 @@
         <figure
           class="gallery-card"
           data-reveal="1"
+
           style="
             margin: 0 0 12px;
             break-inside: avoid;
@@ -1704,6 +1890,7 @@
             alt="Fogo e brasa na parrilla da Figari com cortes assando na grelha inclinada"
             loading="lazy"
             decoding="async"
+
             style="
               width: 100%;
               height: auto;
@@ -1717,6 +1904,7 @@
         <figure
           class="gallery-card"
           data-reveal="1"
+
           style="
             margin: 0 0 12px;
             break-inside: avoid;
@@ -1728,6 +1916,7 @@
             alt="Mesa servida na Figari com carne, arroz e panelinha de ferro"
             loading="lazy"
             decoding="async"
+
             style="
               width: 100%;
               height: auto;
@@ -1741,6 +1930,7 @@
         <figure
           class="gallery-card"
           data-reveal="1"
+
           style="
             margin: 0 0 12px;
             break-inside: avoid;
@@ -1752,6 +1942,7 @@
             alt="Cortes uruguaios dourando na grelha com pimentão ao lado"
             loading="lazy"
             decoding="async"
+
             style="
               width: 100%;
               height: auto;
@@ -1765,6 +1956,7 @@
         <figure
           class="gallery-card"
           data-reveal="1"
+
           style="
             margin: 0 0 12px;
             break-inside: avoid;
@@ -1776,6 +1968,7 @@
             alt="Parede do salão da Figari com quadros antigos sobre pintura terracota"
             loading="lazy"
             decoding="async"
+
             style="
               width: 100%;
               height: auto;
@@ -1789,6 +1982,7 @@
         <figure
           class="gallery-card"
           data-reveal="1"
+
           style="
             margin: 0 0 12px;
             break-inside: avoid;
@@ -1800,6 +1994,7 @@
             alt="Prato servido na Figari com carne, batatas na chapa de ferro, arroz e salada"
             loading="lazy"
             decoding="async"
+
             style="
               width: 100%;
               height: auto;
@@ -1813,6 +2008,7 @@
         <figure
           class="gallery-card"
           data-reveal="1"
+
           style="
             margin: 0 0 12px;
             break-inside: avoid;
@@ -1824,6 +2020,7 @@
             alt="Corte de carne uruguaia fatiado ao ponto com sal grosso na tábua"
             loading="lazy"
             decoding="async"
+
             style="
               width: 100%;
               height: auto;
@@ -1837,6 +2034,7 @@
         <figure
           class="gallery-card"
           data-reveal="1"
+
           style="
             margin: 0 0 12px;
             break-inside: avoid;
@@ -1848,6 +2046,7 @@
             alt="Bife fatiado na tábua com a marca Figari, la auténtica parrilla uruguaya"
             loading="lazy"
             decoding="async"
+
             style="
               width: 100%;
               height: auto;
@@ -1857,7 +2056,6 @@
 
         </figure>
 
-
       </div>
 
     </div>
@@ -1866,7 +2064,10 @@
 
 
 
-  <!-- COMO RESERVAR -->
+  <!-- ======================================================
+       RESERVAR LEVA UM MINUTO
+       SEM CARDS BRANCOS
+       ====================================================== -->
 
   <section
     style="
@@ -1910,8 +2111,8 @@
 
         <div
           style="
-            background: #FFFDF8;
-            border: 1px solid rgba(60, 30, 15, .12);
+            background: transparent;
+            border: none;
             padding: 26px;
           "
         >
@@ -1928,6 +2129,7 @@
             01
           </p>
 
+
           <h3
             style="
               font-family: 'Roboto Slab', serif;
@@ -1941,6 +2143,7 @@
           >
             Chame no WhatsApp
           </h3>
+
 
           <p
             style="
@@ -1957,10 +2160,11 @@
         </div>
 
 
+
         <div
           style="
-            background: #FFFDF8;
-            border: 1px solid rgba(60, 30, 15, .12);
+            background: transparent;
+            border: none;
             padding: 26px;
           "
         >
@@ -1977,6 +2181,7 @@
             02
           </p>
 
+
           <h3
             style="
               font-family: 'Roboto Slab', serif;
@@ -1990,6 +2195,7 @@
           >
             Diga dia e quantas pessoas
           </h3>
+
 
           <p
             style="
@@ -2006,10 +2212,11 @@
         </div>
 
 
+
         <div
           style="
-            background: #FFFDF8;
-            border: 1px solid rgba(60, 30, 15, .12);
+            background: transparent;
+            border: none;
             padding: 26px;
           "
         >
@@ -2026,6 +2233,7 @@
             03
           </p>
 
+
           <h3
             style="
               font-family: 'Roboto Slab', serif;
@@ -2039,6 +2247,7 @@
           >
             Confirmamos e acendemos o fogo
           </h3>
+
 
           <p
             style="
@@ -2062,11 +2271,14 @@
 
 
 
-  <!-- FACHADA -->
+  <!-- ======================================================
+       FACHADA
+       ====================================================== -->
 
   <div
     data-photo-frame
     class="photo-soft-light"
+
     style="
       position: relative;
       width: 100%;
@@ -2081,6 +2293,7 @@
       alt="Fachada da Figari Parrilla Uruguaya em Joinville, deck de madeira coberto por trepadeiras e placa da casa"
       loading="lazy"
       decoding="async"
+
       style="
         width: 100%;
         height: 100%;
@@ -2094,10 +2307,13 @@
 
 
 
-  <!-- LOCAL -->
+  <!-- ======================================================
+       LOCAL
+       ====================================================== -->
 
   <section
     id="local"
+
     style="
       background: #25160F;
       color: #FFF8E9;
@@ -2152,6 +2368,7 @@
           href="https://www.google.com/maps/search/?api=1&amp;query=Figari+Parrilla+Uruguaya+Rua+Joa%C3%A7aba+74+Joinville"
           target="_blank"
           rel="noopener"
+
           style="
             display: inline-block;
             margin-top: 22px;
@@ -2165,6 +2382,7 @@
             text-transform: uppercase;
             transition: background 160ms ease;
           "
+
           style-hover="
             background: rgba(255, 248, 233, .14);
             color: #FFF8E9;
@@ -2222,6 +2440,7 @@
               Almoço, quarta a sexta
             </span>
 
+
             <span
               style="
                 font-family: 'Roboto Slab', serif;
@@ -2233,6 +2452,7 @@
             </span>
 
           </div>
+
 
 
           <div
@@ -2253,6 +2473,7 @@
             >
               Jantar, quinta a sábado
             </span>
+
 
             <span
               style="
@@ -2326,6 +2547,7 @@
             target="_blank"
             rel="noopener"
             aria-label="Falar com a Figari no WhatsApp"
+
             style="
               display: flex;
               align-items: center;
@@ -2337,6 +2559,7 @@
               color: #FFF8E9;
               transition: background 160ms ease;
             "
+
             style-hover="
               background: #6F2516;
               color: #FFF8E9;
@@ -2350,10 +2573,13 @@
               fill="currentColor"
               aria-hidden="true"
             >
+
               <path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path>
+
             </svg>
 
           </a>
+
 
 
           <a
@@ -2361,6 +2587,7 @@
             target="_blank"
             rel="noopener"
             aria-label="Instagram da Figari Parrilla"
+
             style="
               display: flex;
               align-items: center;
@@ -2371,6 +2598,7 @@
               color: #FFF8E9;
               transition: background 160ms ease;
             "
+
             style-hover="
               background: rgba(255, 248, 233, .14);
               color: #FFF8E9;
@@ -2423,7 +2651,9 @@
 
 
 
-  <!-- FOOTER -->
+  <!-- ======================================================
+       FOOTER
+       ====================================================== -->
 
   <footer
     style="
@@ -2460,6 +2690,7 @@
           Figari
         </div>
 
+
         <div
           style="
             font-family: 'Roboto Condensed', Arial, sans-serif;
@@ -2492,21 +2723,38 @@
 
 
 
-  <!-- BOTÃO WHATSAPP MOBILE -->
+  <!-- ======================================================
+       ESPAÇO DO BOTÃO MOBILE
+       ====================================================== -->
 
-  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+  <sc-if
+    value="{{ isMobile }}"
+    hint-placeholder-val="{{ false }}"
+  >
 
     <div style="height: 74px;"></div>
 
   </sc-if>
 
 
-  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+
+  <!-- ======================================================
+       BOTÃO WHATSAPP MOBILE
+       SÓ APARECE DEPOIS DO SCROLL
+       ====================================================== -->
+
+  <sc-if
+    value="{{ isMobile }}"
+    hint-placeholder-val="{{ false }}"
+  >
 
     <a
+      class="mobile-bottom-reserve {{ mobileChromeClass }}"
+
       href="{{ waUrl }}"
       target="_blank"
       rel="noopener"
+
       style="
         position: fixed;
         left: 0;
@@ -2536,7 +2784,9 @@
         fill="currentColor"
         aria-hidden="true"
       >
+
         <path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path>
+
       </svg>
 
       Reservar pelo WhatsApp
@@ -2547,15 +2797,21 @@
 
 
 
-  <!-- BOTÃO WHATSAPP DESKTOP -->
+  <!-- ======================================================
+       WHATSAPP DESKTOP
+       ====================================================== -->
 
-  <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+  <sc-if
+    value="{{ isDesktop }}"
+    hint-placeholder-val="{{ true }}"
+  >
 
     <a
       href="{{ waUrl }}"
       target="_blank"
       rel="noopener"
       aria-label="Reservar pelo WhatsApp"
+
       style="
         position: fixed;
         right: 24px;
@@ -2572,6 +2828,7 @@
         box-shadow: 0 2px 5px rgba(35, 20, 10, .28);
         transition: background 160ms ease;
       "
+
       style-hover="
         background: #6F2516;
         color: #FFF8E9;
@@ -2585,7 +2842,9 @@
         fill="currentColor"
         aria-hidden="true"
       >
+
         <path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path>
+
       </svg>
 
     </a>
@@ -2607,30 +2866,51 @@
 
 class Component extends DCLogic {
 
-  state = {
-    w: typeof window !== 'undefined'
-      ? window.innerWidth
-      : 1200,
 
-    menuOpen: false
+  state = {
+
+    w:
+      typeof window !== 'undefined'
+        ? window.innerWidth
+        : 1200,
+
+    menuOpen:
+      false,
+
+    mobileScrolled:
+      typeof window !== 'undefined'
+        ? window.scrollY > 20
+        : false
+
   };
 
 
+
   componentDidMount() {
+
+
+    /* ======================================================
+       RESIZE
+       ====================================================== */
 
     if (!this._onResize) {
 
       this._onResize = () => {
 
         this.setState({
-          w: window.innerWidth,
+
+          w:
+            window.innerWidth,
+
           menuOpen:
             window.innerWidth >= 900
               ? false
               : this.state.menuOpen
+
         });
 
       };
+
 
       window.addEventListener(
         'resize',
@@ -2642,20 +2922,67 @@ class Component extends DCLogic {
 
     this._onResize();
 
+
     requestAnimationFrame(
       this._onResize
     );
 
 
+
+    /* ======================================================
+       SCROLL MOBILE
+
+       O header e botão aparecem depois de 20px.
+       Se voltar totalmente para cima, somem novamente.
+       ====================================================== */
+
+    this._onScroll = () => {
+
+      const mobileScrolled =
+        window.scrollY > 20;
+
+
+      if (
+        mobileScrolled !==
+        this.state.mobileScrolled
+      ) {
+
+        this.setState({
+          mobileScrolled
+        });
+
+      }
+
+    };
+
+
+    window.addEventListener(
+      'scroll',
+      this._onScroll,
+      {
+        passive: true
+      }
+    );
+
+
+    this._onScroll();
+
+
+
+    /* ======================================================
+       OBSERVAÇÃO DA PÁGINA
+       ====================================================== */
+
     if ('ResizeObserver' in window) {
 
-      this._ro = new ResizeObserver(() => {
+      this._ro =
+        new ResizeObserver(() => {
 
-        this._onResize();
+          this._onResize();
 
-        this._armReveal();
+          this._armReveal();
 
-      });
+        });
 
 
       this._ro.observe(
@@ -2671,19 +2998,34 @@ class Component extends DCLogic {
 
 
 
+  /* ======================================================
+     REVEAL
+     ====================================================== */
+
   _armReveal() {
 
-    if (this._revealArmed) return;
 
-    if (!('IntersectionObserver' in window)) return;
+    if (this._revealArmed) {
+      return;
+    }
+
+
+    if (!('IntersectionObserver' in window)) {
+      return;
+    }
+
 
 
     const reduceMotion =
+
       typeof window !== 'undefined' &&
+
       window.matchMedia &&
+
       window.matchMedia(
         '(prefers-reduced-motion: reduce)'
       ).matches;
+
 
 
     if (reduceMotion) {
@@ -2696,30 +3038,40 @@ class Component extends DCLogic {
 
       els.forEach((el) => {
 
-        el.style.opacity = '1';
+        el.style.opacity =
+          '1';
 
-        el.style.transform = 'none';
+        el.style.transform =
+          'none';
 
       });
 
 
-      this._revealArmed = true;
+      this._revealArmed =
+        true;
+
 
       return;
 
     }
 
 
+
     const w =
+
       document.documentElement.clientWidth ||
+
       window.innerWidth ||
+
       0;
+
 
 
     const els0 =
       document.querySelectorAll(
         '[data-reveal]'
       );
+
 
 
     if (
@@ -2738,8 +3090,12 @@ class Component extends DCLogic {
 
       this._revealRetry =
         window.setTimeout(
-          () => this._armReveal(),
+
+          () =>
+            this._armReveal(),
+
           300
+
         );
 
 
@@ -2748,37 +3104,59 @@ class Component extends DCLogic {
     }
 
 
-    if (w < 900) return;
+
+    /*
+     * Mantém o comportamento original:
+     * reveal somente em telas maiores.
+     */
+    if (w < 900) {
+      return;
+    }
 
 
-    this._revealArmed = true;
+
+    this._revealArmed =
+      true;
+
 
 
     const els =
       Array.from(
+
         document.querySelectorAll(
           '[data-reveal]'
         )
+
       );
+
 
 
     els.forEach(
       (el, i) => {
 
-        el.style.opacity = '0';
+        el.style.opacity =
+          '0';
+
 
         el.style.transform =
           'translateY(20px)';
 
+
         el.style.transition =
+
           'opacity 620ms ease ' +
+
           (i % 3) * 70 +
+
           'ms, transform 620ms cubic-bezier(.2,.7,.2,1) ' +
+
           (i % 3) * 70 +
+
           'ms';
 
       }
     );
+
 
 
     const io =
@@ -2790,10 +3168,12 @@ class Component extends DCLogic {
 
             if (e.isIntersecting) {
 
-              e.target.style.opacity = '1';
+              e.target.style.opacity =
+                '1';
 
               e.target.style.transform =
                 'none';
+
 
               io.unobserve(
                 e.target
@@ -2806,30 +3186,53 @@ class Component extends DCLogic {
         },
 
         {
+
           rootMargin:
             '0px 0px -8% 0px',
 
           threshold:
             0.12
+
         }
 
       );
 
 
+
     els.forEach(
-      (el) => io.observe(el)
+      (el) =>
+        io.observe(el)
     );
 
   }
 
 
 
+  /* ======================================================
+     LIMPEZA
+     ====================================================== */
+
   componentWillUnmount() {
 
-    window.removeEventListener(
-      'resize',
-      this._onResize
-    );
+
+    if (this._onResize) {
+
+      window.removeEventListener(
+        'resize',
+        this._onResize
+      );
+
+    }
+
+
+    if (this._onScroll) {
+
+      window.removeEventListener(
+        'scroll',
+        this._onScroll
+      );
+
+    }
 
 
     if (this._ro) {
@@ -2851,15 +3254,24 @@ class Component extends DCLogic {
 
 
 
+  /* ======================================================
+     VALORES DE RENDERIZAÇÃO
+     ====================================================== */
+
   renderVals() {
+
 
     const phone =
       '5547989042442';
 
 
+
     const msg =
+
       this.props.whatsappMessage ??
+
       'Olá! Gostaria de fazer uma reserva na Figari.';
+
 
 
     if (
@@ -2867,18 +3279,24 @@ class Component extends DCLogic {
       typeof window !== 'undefined'
     ) {
 
-      this._measured = true;
+
+      this._measured =
+        true;
+
 
 
       const remeasure = () => {
 
         this.setState({
-          w: window.innerWidth
+          w:
+            window.innerWidth
         });
+
 
         this._armReveal();
 
       };
+
 
 
       setTimeout(
@@ -2905,19 +3323,22 @@ class Component extends DCLogic {
       );
 
 
+
       if (!this._onResize) {
 
-        this._onResize = () =>
-          this.setState({
+        this._onResize =
+          () =>
+            this.setState({
 
-            w: window.innerWidth,
+              w:
+                window.innerWidth,
 
-            menuOpen:
-              window.innerWidth >= 900
-                ? false
-                : this.state.menuOpen
+              menuOpen:
+                window.innerWidth >= 900
+                  ? false
+                  : this.state.menuOpen
 
-          });
+            });
 
 
         window.addEventListener(
@@ -2930,11 +3351,14 @@ class Component extends DCLogic {
     }
 
 
+
     const narrow =
       this.state.w < 900;
 
 
+
     return {
+
 
       isMobile:
         this.state.w < 760,
@@ -2957,26 +3381,43 @@ class Component extends DCLogic {
         this.state.menuOpen,
 
 
+      mobileChromeClass:
+        this.state.mobileScrolled
+          ? 'is-visible'
+          : '',
+
+
       toggleMenu:
         () =>
+
           this.setState(
+
             (s) => ({
+
               menuOpen:
                 !s.menuOpen
+
             })
+
           ),
 
 
       closeMenu:
         () =>
+
           this.setState({
-            menuOpen: false
+
+            menuOpen:
+              false
+
           }),
 
 
       mostrarAlmoco:
+
         this.props
           .mostrarAlmocoExecutivo
+
         ?? true,
 
 
@@ -2985,16 +3426,24 @@ class Component extends DCLogic {
 
 
       waUrl:
+
         'https://wa.me/' +
+
         phone +
+
         '?text=' +
+
         encodeURIComponent(msg),
 
 
       waUrlAlmoco:
+
         'https://wa.me/' +
+
         phone +
+
         '?text=' +
+
         encodeURIComponent(
           'Olá! Queria reservar mesa para o almoço executivo.'
         )
