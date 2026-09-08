@@ -74,7 +74,7 @@
 
 
   /* ======================================================
-     TRATAMENTO DAS FOTOS
+     FOTOS
      ====================================================== */
 
   .cinematic-photo {
@@ -165,6 +165,7 @@
 
     }
 
+
     #galeria .gallery-card:hover img {
 
       transform:
@@ -179,6 +180,7 @@
 
     }
 
+
     #galeria .gallery-card:hover::after {
       opacity: .35;
     }
@@ -186,13 +188,15 @@
   }
 
 
+
   /* ======================================================
-     LUZ SUAVE DAS FOTOS
+     LUZ SUAVE NAS FOTOS
      ====================================================== */
 
   .photo-soft-light {
     position: relative;
   }
+
 
   .photo-soft-light::after {
 
@@ -216,75 +220,162 @@
   }
 
 
+
   /* ======================================================
-     MOBILE
-     HEADER + WHATSAPP SÓ APÓS ROLAR
+     HEADER / CTA MOBILE
      ====================================================== */
 
   .mobile-scroll-header {
+
     transition:
-      transform 380ms cubic-bezier(.2,.7,.2,1),
-      opacity 280ms ease;
+      transform 360ms cubic-bezier(.2,.7,.2,1),
+      opacity 260ms ease;
+
   }
+
 
   .mobile-bottom-reserve {
+
     transition:
-      transform 380ms cubic-bezier(.2,.7,.2,1),
-      opacity 280ms ease;
+      transform 360ms cubic-bezier(.2,.7,.2,1),
+      opacity 260ms ease,
+      background 180ms ease;
+
   }
 
+
+
+  /* ======================================================
+     MOBILE
+     ====================================================== */
 
   @media (max-width: 759px) {
 
+
     /*
-     * No mobile a foto começa imediatamente
-     * no topo da tela.
+     * HERO ocupa toda a primeira dobra.
+     *
+     * Isso impede que avaliações apareçam
+     * na tela inicial.
      */
+
     #topo {
+
       margin-top: 0 !important;
+
+      min-height: 100vh !important;
+      min-height: 100svh !important;
+
     }
 
 
+
     /*
-     * Header escondido inicialmente.
+     * Header invisível ao abrir.
      */
+
     .mobile-scroll-header {
-      transform: translateY(-100%);
+
+      transform: translateY(-105%);
       opacity: 0;
       pointer-events: none;
+
     }
 
 
-    /*
-     * Aparece depois que o usuário rola.
-     */
     .mobile-scroll-header.is-visible {
+
       transform: translateY(0);
       opacity: 1;
       pointer-events: auto;
+
     }
 
 
+
     /*
-     * Botão inferior escondido inicialmente.
+     * CTA FIXO MOBILE
+     *
+     * Agora é pequeno.
+     * Não ocupa mais a tela inteira.
      */
+
     .mobile-bottom-reserve {
-      transform: translateY(110%);
+
+      left: auto !important;
+
+      right: 14px !important;
+
+      bottom:
+        calc(
+          14px + env(safe-area-inset-bottom)
+        ) !important;
+
+      width: auto !important;
+
+      height: 46px !important;
+
+      padding:
+        0 15px !important;
+
+      gap: 7px !important;
+
+      border:
+        1px solid rgba(111, 37, 22, .75) !important;
+
+      border-radius:
+        3px;
+
+      font-size:
+        11px !important;
+
+      letter-spacing:
+        .08em !important;
+
+      box-shadow:
+        0 5px 18px rgba(30, 12, 5, .18);
+
+      transform:
+        translateY(80px);
+
       opacity: 0;
+
       pointer-events: none;
+
     }
 
 
-    /*
-     * Aparece depois que o usuário rola.
-     */
+
     .mobile-bottom-reserve.is-visible {
-      transform: translateY(0);
-      opacity: 1;
-      pointer-events: auto;
+
+      transform:
+        translateY(0);
+
+      opacity:
+        .94;
+
+      pointer-events:
+        auto;
+
+    }
+
+
+
+    /*
+     * Não precisamos mais reservar
+     * 74px no final da página porque
+     * o botão não ocupa toda largura.
+     */
+
+    .mobile-bottom-space {
+
+      height:
+        0 !important;
+
     }
 
   }
+
 
 
   /* ======================================================
@@ -299,14 +390,17 @@
     .mobile-scroll-header,
     .mobile-bottom-reserve {
 
-      transition: none !important;
+      transition:
+        none !important;
 
     }
+
 
     .cinematic-photo,
     #galeria .gallery-card img {
 
-      transform: none !important;
+      transform:
+        none !important;
 
     }
 
@@ -327,18 +421,32 @@
   "telephone": "+5547989042442",
 
   "address": {
+
     "@type": "PostalAddress",
-    "streetAddress": "Rua Joaçaba, 74, Sala 6",
-    "addressLocality": "Joinville",
-    "addressRegion": "SC",
-    "postalCode": "89221-340",
-    "addressCountry": "BR"
+
+    "streetAddress":
+      "Rua Joaçaba, 74, Sala 6",
+
+    "addressLocality":
+      "Joinville",
+
+    "addressRegion":
+      "SC",
+
+    "postalCode":
+      "89221-340",
+
+    "addressCountry":
+      "BR"
+
   },
 
   "openingHoursSpecification": [
 
     {
-      "@type": "OpeningHoursSpecification",
+
+      "@type":
+        "OpeningHoursSpecification",
 
       "dayOfWeek": [
         "Wednesday",
@@ -346,12 +454,18 @@
         "Friday"
       ],
 
-      "opens": "11:00",
-      "closes": "15:00"
+      "opens":
+        "11:00",
+
+      "closes":
+        "15:00"
+
     },
 
     {
-      "@type": "OpeningHoursSpecification",
+
+      "@type":
+        "OpeningHoursSpecification",
 
       "dayOfWeek": [
         "Thursday",
@@ -359,16 +473,27 @@
         "Saturday"
       ],
 
-      "opens": "18:00",
-      "closes": "23:00"
+      "opens":
+        "18:00",
+
+      "closes":
+        "23:00"
+
     }
 
   ],
 
   "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "4.8",
-    "reviewCount": "137"
+
+    "@type":
+      "AggregateRating",
+
+    "ratingValue":
+      "4.8",
+
+    "reviewCount":
+      "137"
+
   },
 
   "acceptsReservations":
@@ -396,12 +521,14 @@
 >
 
 
+
   <!-- ======================================================
        HEADER
        ====================================================== -->
 
   <header
     class="mobile-scroll-header {{ mobileChromeClass }}"
+
     style="
       position: fixed;
       top: 0;
@@ -428,6 +555,7 @@
 
       <a
         href="#topo"
+
         style="
           display: block;
           text-align: left;
@@ -448,6 +576,7 @@
           Figari
         </div>
 
+
         <div
           style="
             font-family: 'Roboto Condensed', Arial, sans-serif;
@@ -463,6 +592,7 @@
         </div>
 
       </a>
+
 
 
       <nav
@@ -491,7 +621,9 @@
               href="{{ waUrl }}"
               target="_blank"
               rel="noopener"
-              aria-label="Reservar pelo WhatsApp"
+
+              aria-label=
+                "Reservar pelo WhatsApp"
 
               style="
                 display: flex;
@@ -518,6 +650,7 @@
               </svg>
 
             </a>
+
 
 
             <button
@@ -652,7 +785,9 @@
               href="{{ instagramUrl }}"
               target="_blank"
               rel="noopener"
-              aria-label="Instagram da Figari Parrilla"
+
+              aria-label=
+                "Instagram da Figari Parrilla"
 
               style="
                 color: #25160F;
@@ -734,18 +869,6 @@
               color: #FFF8E9;
             "
           >
-
-            <svg
-              width="15"
-              height="15"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-
-              <path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path>
-
-            </svg>
 
             Reservar
 
@@ -881,43 +1004,7 @@
           padding: 15px 0;
         "
       >
-
-        <svg
-          width="18"
-          height="18"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="1.7"
-          aria-hidden="true"
-        >
-
-          <rect
-            x="3"
-            y="3"
-            width="18"
-            height="18"
-            rx="4"
-          ></rect>
-
-          <circle
-            cx="12"
-            cy="12"
-            r="4"
-          ></circle>
-
-          <circle
-            cx="17.4"
-            cy="6.6"
-            r="1.1"
-            fill="currentColor"
-            stroke="none"
-          ></circle>
-
-        </svg>
-
         Instagram
-
       </a>
 
     </nav>
@@ -947,8 +1034,12 @@
 
     <img
       class="cinematic-photo"
-      src="img/parrilla-cortes-crus.jpg"
-      alt="Cortes de carne uruguaia sobre a grelha da parrilla a lenha da Figari"
+
+      src=
+        "img/parrilla-cortes-crus.jpg"
+
+      alt=
+        "Cortes de carne uruguaia sobre a grelha da parrilla a lenha da Figari"
 
       style="
         position: absolute;
@@ -1113,10 +1204,13 @@
 
 
   <!-- ======================================================
-       PROVA SOCIAL
+       AVALIAÇÕES
+       FICAM ABAIXO DA PRIMEIRA DOBRA NO MOBILE
        ====================================================== -->
 
   <section
+    id="prova-social"
+
     style="
       background: #25160F;
       color: #FFF8E9;
@@ -1154,6 +1248,7 @@
         >
           4,8
         </span>
+
 
         <span
           style="
@@ -1221,7 +1316,6 @@
 
   <!-- ======================================================
        QUEM SENTA AQUI VOLTA
-       SEM CARDS BRANCOS
        ====================================================== -->
 
   <section
@@ -1291,6 +1385,7 @@
             A melhor carne que já comi. Mas não é só carne, é experiência e a experiência aqui é muito boa e cultural Uruguaia
           </blockquote>
 
+
           <figcaption
             style="
               margin-top: 20px;
@@ -1306,6 +1401,7 @@
           </figcaption>
 
         </figure>
+
 
 
         <figure
@@ -1333,6 +1429,7 @@
             Maravilhoso! Aquele carinho e simpatia uruguaia e hambiente decorado de acordo! Assado e acompanhamentos, todo muy rico! Encontramos nosso refúgio uruguaio em Joiville!
           </blockquote>
 
+
           <figcaption
             style="
               margin-top: 20px;
@@ -1348,6 +1445,7 @@
           </figcaption>
 
         </figure>
+
 
 
         <figure
@@ -1375,6 +1473,7 @@
             Maravilhoso!!! Moro em Joinville há 7 anos é só agora que descobri um pedacinho da minha terra aqui!!!!
           </blockquote>
 
+
           <figcaption
             style="
               margin-top: 20px;
@@ -1390,6 +1489,7 @@
           </figcaption>
 
         </figure>
+
 
       </div>
 
@@ -1524,8 +1624,12 @@
 
         <img
           class="cinematic-photo"
-          src="img/parrilla-lenha-acesa.png"
-          alt="Parrilla a lenha acesa da Figari com cortes na grelha e prateleira de bebidas"
+
+          src=
+            "img/parrilla-lenha-acesa.png"
+
+          alt=
+            "Parrilla a lenha acesa da Figari com cortes na grelha e prateleira de bebidas"
 
           style="
             position: absolute;
@@ -1565,8 +1669,12 @@
 
     <img
       class="cinematic-photo"
-      src="img/bife-de-chorizo.jpg"
-      alt="Bife de chorizo uruguaio fatiado na tábua com sal grosso"
+
+      src=
+        "img/bife-de-chorizo.jpg"
+
+      alt=
+        "Bife de chorizo uruguaio fatiado na tábua com sal grosso"
 
       style="
         position: absolute;
@@ -1725,7 +1833,7 @@
 
 
   <!-- ======================================================
-       ALMOÇO EXECUTIVO
+       ALMOÇO
        ====================================================== -->
 
   <sc-if
@@ -1799,12 +1907,6 @@
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            transition: background 160ms ease;
-          "
-
-          style-hover="
-            background: #6F2516;
-            color: #FFF8E9;
           "
         >
           Garantir mesa no almoço
@@ -1873,7 +1975,6 @@
           margin-top: 32px;
         "
       >
-
 
         <figure
           class="gallery-card"
@@ -2065,8 +2166,7 @@
 
 
   <!-- ======================================================
-       RESERVAR LEVA UM MINUTO
-       SEM CARDS BRANCOS
+       RESERVAR
        ====================================================== -->
 
   <section
@@ -2289,8 +2389,13 @@
 
     <img
       class="cinematic-photo"
-      src="img/fachada-deck.png"
-      alt="Fachada da Figari Parrilla Uruguaya em Joinville, deck de madeira coberto por trepadeiras e placa da casa"
+
+      src=
+        "img/fachada-deck.png"
+
+      alt=
+        "Fachada da Figari Parrilla Uruguaya em Joinville, deck de madeira coberto por trepadeiras e placa da casa"
+
       loading="lazy"
       decoding="async"
 
@@ -2365,7 +2470,9 @@
 
 
         <a
-          href="https://www.google.com/maps/search/?api=1&amp;query=Figari+Parrilla+Uruguaya+Rua+Joa%C3%A7aba+74+Joinville"
+          href=
+            "https://www.google.com/maps/search/?api=1&amp;query=Figari+Parrilla+Uruguaya+Rua+Joa%C3%A7aba+74+Joinville"
+
           target="_blank"
           rel="noopener"
 
@@ -2380,12 +2487,6 @@
             font-weight: 700;
             letter-spacing: 0.08em;
             text-transform: uppercase;
-            transition: background 160ms ease;
-          "
-
-          style-hover="
-            background: rgba(255, 248, 233, .14);
-            color: #FFF8E9;
           "
         >
           Abrir no mapa
@@ -2420,7 +2521,6 @@
           "
         >
 
-
           <div
             style="
               display: flex;
@@ -2452,7 +2552,6 @@
             </span>
 
           </div>
-
 
 
           <div
@@ -2541,12 +2640,13 @@
           "
         >
 
-
           <a
             href="{{ waUrl }}"
             target="_blank"
             rel="noopener"
-            aria-label="Falar com a Figari no WhatsApp"
+
+            aria-label=
+              "Falar com a Figari no WhatsApp"
 
             style="
               display: flex;
@@ -2557,36 +2657,19 @@
               background: #832E1A;
               border: 1px solid #6F2516;
               color: #FFF8E9;
-              transition: background 160ms ease;
-            "
-
-            style-hover="
-              background: #6F2516;
-              color: #FFF8E9;
             "
           >
-
-            <svg
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="currentColor"
-              aria-hidden="true"
-            >
-
-              <path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path>
-
-            </svg>
-
+            WhatsApp
           </a>
-
 
 
           <a
             href="{{ instagramUrl }}"
             target="_blank"
             rel="noopener"
-            aria-label="Instagram da Figari Parrilla"
+
+            aria-label=
+              "Instagram da Figari Parrilla"
 
             style="
               display: flex;
@@ -2596,49 +2679,9 @@
               height: 52px;
               border: 1px solid #FFF8E9;
               color: #FFF8E9;
-              transition: background 160ms ease;
-            "
-
-            style-hover="
-              background: rgba(255, 248, 233, .14);
-              color: #FFF8E9;
             "
           >
-
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="1.7"
-              aria-hidden="true"
-            >
-
-              <rect
-                x="3"
-                y="3"
-                width="18"
-                height="18"
-                rx="4"
-              ></rect>
-
-              <circle
-                cx="12"
-                cy="12"
-                r="4"
-              ></circle>
-
-              <circle
-                cx="17.4"
-                cy="6.6"
-                r="1.1"
-                fill="currentColor"
-                stroke="none"
-              ></circle>
-
-            </svg>
-
+            IG
           </a>
 
         </div>
@@ -2724,7 +2767,8 @@
 
 
   <!-- ======================================================
-       ESPAÇO DO BOTÃO MOBILE
+       MOBILE
+       SEM ESPAÇO GRANDE PARA O CTA
        ====================================================== -->
 
   <sc-if
@@ -2732,15 +2776,17 @@
     hint-placeholder-val="{{ false }}"
   >
 
-    <div style="height: 74px;"></div>
+    <div
+      class="mobile-bottom-space"
+      style="height: 74px;"
+    ></div>
 
   </sc-if>
 
 
 
   <!-- ======================================================
-       BOTÃO WHATSAPP MOBILE
-       SÓ APARECE DEPOIS DO SCROLL
+       CTA FIXO MOBILE DISCRETO
        ====================================================== -->
 
   <sc-if
@@ -2749,11 +2795,15 @@
   >
 
     <a
-      class="mobile-bottom-reserve {{ mobileChromeClass }}"
+      class=
+        "mobile-bottom-reserve {{ mobileChromeClass }}"
 
       href="{{ waUrl }}"
       target="_blank"
       rel="noopener"
+
+      aria-label=
+        "Reservar pelo WhatsApp"
 
       style="
         position: fixed;
@@ -2761,25 +2811,43 @@
         right: 0;
         bottom: 0;
         z-index: 70;
+
         display: flex;
         align-items: center;
         justify-content: center;
+
         gap: 10px;
+
         height: 62px;
+
         background: #832E1A;
-        border-top: 1px solid #6F2516;
-        color: #FFF8E9;
-        font-family: 'Roboto Slab', serif;
-        font-size: 14px;
-        font-weight: 700;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+
+        border-top:
+          1px solid #6F2516;
+
+        color:
+          #FFF8E9;
+
+        font-family:
+          'Roboto Slab', serif;
+
+        font-size:
+          14px;
+
+        font-weight:
+          700;
+
+        letter-spacing:
+          0.08em;
+
+        text-transform:
+          uppercase;
       "
     >
 
       <svg
-        width="18"
-        height="18"
+        width="16"
+        height="16"
         viewBox="0 0 24 24"
         fill="currentColor"
         aria-hidden="true"
@@ -2789,7 +2857,7 @@
 
       </svg>
 
-      Reservar pelo WhatsApp
+      Reservar
 
     </a>
 
@@ -2810,28 +2878,33 @@
       href="{{ waUrl }}"
       target="_blank"
       rel="noopener"
-      aria-label="Reservar pelo WhatsApp"
+
+      aria-label=
+        "Reservar pelo WhatsApp"
 
       style="
         position: fixed;
         right: 24px;
         bottom: 24px;
         z-index: 70;
+
         display: flex;
         align-items: center;
         justify-content: center;
+
         width: 58px;
         height: 58px;
-        background: #832E1A;
-        border: 1px solid #6F2516;
-        color: #FFF8E9;
-        box-shadow: 0 2px 5px rgba(35, 20, 10, .28);
-        transition: background 160ms ease;
-      "
 
-      style-hover="
-        background: #6F2516;
-        color: #FFF8E9;
+        background: #832E1A;
+
+        border:
+          1px solid #6F2516;
+
+        color:
+          #FFF8E9;
+
+        box-shadow:
+          0 2px 5px rgba(35, 20, 10, .28);
       "
     >
 
@@ -2861,6 +2934,7 @@
 <script
   type="text/x-dc"
   data-dc-script
+
   data-props="{&quot;whatsappMessage&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Olá! Gostaria de fazer uma reserva na Figari.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contato&quot;},&quot;mostrarAlmocoExecutivo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Seções&quot;}}"
 >
 
@@ -2878,9 +2952,7 @@ class Component extends DCLogic {
       false,
 
     mobileScrolled:
-      typeof window !== 'undefined'
-        ? window.scrollY > 20
-        : false
+      false
 
   };
 
@@ -2893,53 +2965,56 @@ class Component extends DCLogic {
        RESIZE
        ====================================================== */
 
-    if (!this._onResize) {
+    this._onResize = () => {
 
-      this._onResize = () => {
+      this.setState({
 
-        this.setState({
+        w:
+          window.innerWidth,
 
-          w:
-            window.innerWidth,
+        menuOpen:
+          window.innerWidth >= 900
+            ? false
+            : this.state.menuOpen
 
-          menuOpen:
-            window.innerWidth >= 900
-              ? false
-              : this.state.menuOpen
+      });
 
-        });
-
-      };
+    };
 
 
-      window.addEventListener(
-        'resize',
-        this._onResize
-      );
-
-    }
+    window.addEventListener(
+      'resize',
+      this._onResize
+    );
 
 
     this._onResize();
 
 
-    requestAnimationFrame(
-      this._onResize
-    );
-
-
 
     /* ======================================================
        SCROLL MOBILE
-
-       O header e botão aparecem depois de 20px.
-       Se voltar totalmente para cima, somem novamente.
        ====================================================== */
 
     this._onScroll = () => {
 
+
+      /*
+       * O header / CTA não aparecem
+       * imediatamente ao tocar no scroll.
+       *
+       * Isso mantém a abertura limpa.
+       */
+
+      const threshold =
+        Math.min(
+          150,
+          window.innerHeight * .18
+        );
+
+
       const mobileScrolled =
-        window.scrollY > 20;
+        window.scrollY > threshold;
 
 
       if (
@@ -2970,37 +3045,14 @@ class Component extends DCLogic {
 
 
     /* ======================================================
-       OBSERVAÇÃO DA PÁGINA
+       REVEAL
        ====================================================== */
-
-    if ('ResizeObserver' in window) {
-
-      this._ro =
-        new ResizeObserver(() => {
-
-          this._onResize();
-
-          this._armReveal();
-
-        });
-
-
-      this._ro.observe(
-        document.documentElement
-      );
-
-    }
-
 
     this._armReveal();
 
   }
 
 
-
-  /* ======================================================
-     REVEAL
-     ====================================================== */
 
   _armReveal() {
 
@@ -3010,15 +3062,19 @@ class Component extends DCLogic {
     }
 
 
-    if (!('IntersectionObserver' in window)) {
+    if (
+      !(
+        'IntersectionObserver'
+        in window
+      )
+    ) {
+
       return;
+
     }
 
 
-
     const reduceMotion =
-
-      typeof window !== 'undefined' &&
 
       window.matchMedia &&
 
@@ -3027,97 +3083,20 @@ class Component extends DCLogic {
       ).matches;
 
 
-
     if (reduceMotion) {
-
-      const els =
-        document.querySelectorAll(
-          '[data-reveal]'
-        );
-
-
-      els.forEach((el) => {
-
-        el.style.opacity =
-          '1';
-
-        el.style.transform =
-          'none';
-
-      });
-
 
       this._revealArmed =
         true;
 
-
       return;
 
     }
-
 
 
     const w =
-
       document.documentElement.clientWidth ||
-
       window.innerWidth ||
-
       0;
-
-
-
-    const els0 =
-      document.querySelectorAll(
-        '[data-reveal]'
-      );
-
-
-
-    if (
-      w === 0 ||
-      els0.length === 0
-    ) {
-
-      if (this._revealRetry) {
-
-        window.clearTimeout(
-          this._revealRetry
-        );
-
-      }
-
-
-      this._revealRetry =
-        window.setTimeout(
-
-          () =>
-            this._armReveal(),
-
-          300
-
-        );
-
-
-      return;
-
-    }
-
-
-
-    /*
-     * Mantém o comportamento original:
-     * reveal somente em telas maiores.
-     */
-    if (w < 900) {
-      return;
-    }
-
-
-
-    this._revealArmed =
-      true;
-
 
 
     const els =
@@ -3130,6 +3109,19 @@ class Component extends DCLogic {
       );
 
 
+    if (
+      w < 900 ||
+      els.length === 0
+    ) {
+
+      return;
+
+    }
+
+
+    this._revealArmed =
+      true;
+
 
     els.forEach(
       (el, i) => {
@@ -3137,10 +3129,8 @@ class Component extends DCLogic {
         el.style.opacity =
           '0';
 
-
         el.style.transform =
           'translateY(20px)';
-
 
         el.style.transition =
 
@@ -3158,30 +3148,32 @@ class Component extends DCLogic {
     );
 
 
-
     const io =
       new IntersectionObserver(
 
         (entries) => {
 
-          entries.forEach((e) => {
+          entries.forEach(
+            (e) => {
 
-            if (e.isIntersecting) {
+              if (
+                e.isIntersecting
+              ) {
 
-              e.target.style.opacity =
-                '1';
+                e.target.style.opacity =
+                  '1';
 
-              e.target.style.transform =
-                'none';
+                e.target.style.transform =
+                  'none';
 
+                io.unobserve(
+                  e.target
+                );
 
-              io.unobserve(
-                e.target
-              );
+              }
 
             }
-
-          });
+          );
 
         },
 
@@ -3191,12 +3183,11 @@ class Component extends DCLogic {
             '0px 0px -8% 0px',
 
           threshold:
-            0.12
+            .12
 
         }
 
       );
-
 
 
     els.forEach(
@@ -3207,10 +3198,6 @@ class Component extends DCLogic {
   }
 
 
-
-  /* ======================================================
-     LIMPEZA
-     ====================================================== */
 
   componentWillUnmount() {
 
@@ -3234,29 +3221,9 @@ class Component extends DCLogic {
 
     }
 
-
-    if (this._ro) {
-
-      this._ro.disconnect();
-
-    }
-
-
-    if (this._revealRetry) {
-
-      window.clearTimeout(
-        this._revealRetry
-      );
-
-    }
-
   }
 
 
-
-  /* ======================================================
-     VALORES DE RENDERIZAÇÃO
-     ====================================================== */
 
   renderVals() {
 
@@ -3265,90 +3232,11 @@ class Component extends DCLogic {
       '5547989042442';
 
 
-
     const msg =
 
       this.props.whatsappMessage ??
 
       'Olá! Gostaria de fazer uma reserva na Figari.';
-
-
-
-    if (
-      !this._measured &&
-      typeof window !== 'undefined'
-    ) {
-
-
-      this._measured =
-        true;
-
-
-
-      const remeasure = () => {
-
-        this.setState({
-          w:
-            window.innerWidth
-        });
-
-
-        this._armReveal();
-
-      };
-
-
-
-      setTimeout(
-        remeasure,
-        0
-      );
-
-
-      setTimeout(
-        remeasure,
-        150
-      );
-
-
-      setTimeout(
-        remeasure,
-        600
-      );
-
-
-      window.addEventListener(
-        'load',
-        remeasure
-      );
-
-
-
-      if (!this._onResize) {
-
-        this._onResize =
-          () =>
-            this.setState({
-
-              w:
-                window.innerWidth,
-
-              menuOpen:
-                window.innerWidth >= 900
-                  ? false
-                  : this.state.menuOpen
-
-            });
-
-
-        window.addEventListener(
-          'resize',
-          this._onResize
-        );
-
-      }
-
-    }
 
 
 
@@ -3377,17 +3265,20 @@ class Component extends DCLogic {
 
 
       menuOpen:
+
         narrow &&
         this.state.menuOpen,
 
 
       mobileChromeClass:
+
         this.state.mobileScrolled
           ? 'is-visible'
           : '',
 
 
       toggleMenu:
+
         () =>
 
           this.setState(
@@ -3403,6 +3294,7 @@ class Component extends DCLogic {
 
 
       closeMenu:
+
         () =>
 
           this.setState({
@@ -3422,6 +3314,7 @@ class Component extends DCLogic {
 
 
       instagramUrl:
+
         'https://www.instagram.com/figariparrilla/',
 
 
@@ -3433,7 +3326,9 @@ class Component extends DCLogic {
 
         '?text=' +
 
-        encodeURIComponent(msg),
+        encodeURIComponent(
+          msg
+        ),
 
 
       waUrlAlmoco:
