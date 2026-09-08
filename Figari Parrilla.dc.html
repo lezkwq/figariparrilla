@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Figari Parrilla Uruguaya | Parrilla a lenha com carne uruguaia em Joinville</title>
+<meta name="description" content="Parrilla uruguaia autêntica em Joinville. Cortes Hereford e Angus importados do Uruguai, assados na parrilla a lenha. Nota 4,8 no Google. Reserve pelo WhatsApp." />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700;900&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
+<style>
+  html, body { margin: 0; padding: 0; background: #FCF1DB; overflow-x: hidden; max-width: 100%; }
+  body { font-family: "Roboto Condensed", Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+  img { display: block; max-width: 100%; }
+  a { color: #832E1A; text-decoration: none; }
+  a:hover { color: #6F2516; }
+  h1, h2, h3 { margin: 0; }
+  p { margin: 0; }
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Restaurant","name":"Figari Parrilla Uruguaya","servesCuisine":"Uruguayan","priceRange":"R$ 80 a R$ 160","telephone":"+5547989042442","address":{"@type":"PostalAddress","streetAddress":"Rua Joaçaba, 74, Sala 6","addressLocality":"Joinville","addressRegion":"SC","postalCode":"89221-340","addressCountry":"BR"},"openingHoursSpecification":[{"@type":"OpeningHoursSpecification","dayOfWeek":["Wednesday","Thursday","Friday"],"opens":"11:00","closes":"15:00"},{"@type":"OpeningHoursSpecification","dayOfWeek":["Thursday","Friday","Saturday"],"opens":"18:00","closes":"23:00"}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"137"},"acceptsReservations":"https://wa.me/5547989042442","sameAs":["https://instagram.com/figariparrilla"]}
+</script>
+</helmet>
+<div style="background: #FCF1DB; color: #25160F; width: 100%; overflow-x: hidden;">
+
+  <header style="position: fixed; top: 0; left: 0; right: 0; height: 76px; background: #F9EAD5; border-bottom: 1px solid #DCC9AA; z-index: 60;">
+    <div style="width: min(1180px, calc(100% - 40px)); height: 100%; margin-inline: auto; display: flex; align-items: center; justify-content: space-between; gap: 24px;">
+      <a href="#topo" style="display: block; text-align: left; color: #25160F;">
+        <div style="font-family: 'Roboto Slab', Georgia, serif; font-weight: 900; font-size: 26px; line-height: .9; letter-spacing: -0.03em; text-transform: uppercase;">Figari</div>
+        <div style="font-family: 'Roboto Condensed', Arial, sans-serif; font-weight: 700; font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase; color: #7A6858; margin-top: 4px;">La auténtica parrilla uruguaya</div>
+      </a>
+      <nav style="display: flex; align-items: center; gap: 16px;">
+        <sc-if value="{{ isNarrow }}" hint-placeholder-val="{{ false }}">
+          <div style="display: flex; align-items: center; gap: 12px;">
+          <a href="{{ waUrl }}" target="_blank" rel="noopener" aria-label="Reservar pelo WhatsApp" style="display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; background: #832E1A; border: 1px solid #6F2516; color: #FFF8E9;">
+            <svg width="21" height="21" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path></svg>
+          </a>
+          <button type="button" onClick="{{ toggleMenu }}" aria-label="Abrir menu" style="display: flex; flex-direction: column; justify-content: center; gap: 5px; width: 42px; height: 42px; padding: 0 9px; background: transparent; border: 1px solid #DCC9AA; cursor: pointer;">
+            <span style="display: block; height: 2px; background: #25160F;"></span>
+            <span style="display: block; height: 2px; background: #25160F;"></span>
+            <span style="display: block; height: 2px; background: #25160F;"></span>
+          </button>
+          </div>
+        </sc-if>
+        <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+        <div style="display: flex; align-items: center; gap: 22px;">
+        <a href="#autenticidade" style="font-family: 'Roboto Slab', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #25160F;">A casa</a>
+        <a href="#parrilla" style="font-family: 'Roboto Slab', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #25160F;">A parrilla</a>
+        <a href="#galeria" style="font-family: 'Roboto Slab', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #25160F;">Fotos</a>
+        <a href="#local" style="font-family: 'Roboto Slab', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #25160F;">Onde estamos</a>
+        <a href="{{ instagramUrl }}" target="_blank" rel="noopener" aria-label="Instagram da Figari Parrilla" style="color: #25160F; display: flex; align-items: center;">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+        </a>
+        </div>
+        </sc-if>
+        <sc-if value="{{ isWide }}" hint-placeholder-val="{{ true }}">
+        <a href="{{ waUrl }}" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 8px; background: #832E1A; border: 1px solid #6F2516; color: #FFF8E9; padding: 11px 18px; font-family: 'Roboto Slab', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: background 160ms ease;" style-hover="background: #6F2516; color: #FFF8E9;">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path></svg>
+          Reservar
+        </a>
+        </sc-if>
+      </nav>
+    </div>
+  </header>
+
+  <sc-if value="{{ menuOpen }}" hint-placeholder-val="{{ false }}">
+    <nav style="position: fixed; top: 76px; left: 0; right: 0; z-index: 55; background: #F9EAD5; border-bottom: 1px solid #DCC9AA; display: flex; flex-direction: column; padding: 8px 20px 20px;">
+      <a href="#autenticidade" onClick="{{ closeMenu }}" style="font-family: 'Roboto Slab', serif; font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #25160F; padding: 15px 0; border-bottom: 1px solid #DCC9AA;">A casa</a>
+      <a href="#parrilla" onClick="{{ closeMenu }}" style="font-family: 'Roboto Slab', serif; font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #25160F; padding: 15px 0; border-bottom: 1px solid #DCC9AA;">A parrilla</a>
+      <a href="#galeria" onClick="{{ closeMenu }}" style="font-family: 'Roboto Slab', serif; font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #25160F; padding: 15px 0; border-bottom: 1px solid #DCC9AA;">Fotos</a>
+      <a href="#local" onClick="{{ closeMenu }}" style="font-family: 'Roboto Slab', serif; font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #25160F; padding: 15px 0; border-bottom: 1px solid #DCC9AA;">Onde estamos</a>
+      <a href="{{ instagramUrl }}" target="_blank" rel="noopener" onClick="{{ closeMenu }}" style="display: flex; align-items: center; gap: 10px; font-family: 'Roboto Slab', serif; font-size: 15px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #25160F; padding: 15px 0;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+        Instagram
+      </a>
+    </nav>
+  </sc-if>
+
+  <section id="topo" style="position: relative; margin-top: 76px; min-height: min(78vh, 660px); display: flex; align-items: flex-end; overflow: hidden;">
+    <img src="img/parrilla-cortes-crus.jpg" alt="Cortes de carne uruguaia sobre a grelha da parrilla a lenha da Figari" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 42%; filter: contrast(1.08) saturate(1.05) sepia(.05);" />
+    <div style="position: absolute; inset: 0; background: rgba(22, 9, 3, .38);"></div>
+    <div style="position: relative; width: min(1180px, calc(100% - 40px)); margin-inline: auto; padding: 90px 0 56px;">
+      <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: #D8C19E; margin-bottom: 18px;">Joinville, Saguaçu</p>
+      <h1 style="font-family: 'Roboto Slab', Georgia, serif; font-weight: 900; font-size: clamp(40px, 7vw, 84px); line-height: .9; letter-spacing: -0.04em; text-transform: uppercase; color: #FFF8E9; max-width: 15ch;">Fogo, lenha e carne uruguaia</h1>
+      <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 17px; color: #FFF8E9; max-width: 46ch; margin-top: 20px;">Cortes Hereford e Angus vindos do Uruguai, assados na parrilla a lenha à vista do salão.</p>
+      <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 30px;">
+        <a href="{{ waUrl }}" target="_blank" rel="noopener" style="display: flex; align-items: center; gap: 9px; background: #832E1A; border: 1px solid #6F2516; color: #FFF8E9; padding: 15px 26px; font-family: 'Roboto Slab', serif; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: background 160ms ease;" style-hover="background: #6F2516; color: #FFF8E9;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path></svg>
+          Reservar mesa
+        </a>
+        <a href="#parrilla" style="display: inline-block; color: #FFF8E9; background: transparent; border: 1px solid #FFF8E9; padding: 15px 26px; font-family: 'Roboto Slab', serif; font-size: 13px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: background 160ms ease;" style-hover="background: rgba(255, 248, 233, .14); color: #FFF8E9;">Ver a parrilla</a>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #25160F; color: #FFF8E9; padding: 26px 0;">
+    <div style="width: min(1180px, calc(100% - 40px)); margin-inline: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 20px 34px;">
+      <div style="display: flex; align-items: baseline; gap: 10px;">
+        <span style="font-family: 'Roboto Slab', serif; font-weight: 900; font-size: 34px; line-height: 1;">4,8</span>
+        <span style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #D8C19E;">no Google, 137 avaliações</span>
+      </div>
+      <div style="width: 1px; align-self: stretch; background: rgba(216, 193, 158, .3);"></div>
+      <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #FFF8E9;">Carne importada do Uruguai, Hereford e Angus</p>
+      <div style="width: 1px; align-self: stretch; background: rgba(216, 193, 158, .3);"></div>
+      <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 13px; letter-spacing: 0.14em; text-transform: uppercase; color: #FFF8E9;">Parrilla a lenha à vista</p>
+    </div>
+  </section>
+
+  <section style="background: #FCF1DB; padding: clamp(48px, 7vw, 78px) 0;">
+    <div style="width: min(1180px, calc(100% - 40px)); margin-inline: auto;">
+      <h2 data-reveal="1" style="font-family: 'Roboto Slab', Georgia, serif; font-weight: 900; font-size: clamp(30px, 4.4vw, 54px); line-height: .95; letter-spacing: -0.035em; text-transform: uppercase; color: #25160F; max-width: 22ch;">Quem senta aqui volta</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 12px; margin-top: 34px;">
+        <figure data-reveal="1" style="margin: 0; background: #FFFDF8; border: 1px solid rgba(60, 30, 15, .12); box-shadow: 0 2px 5px rgba(35, 20, 10, .08); padding: 28px;">
+          <blockquote style="margin: 0; font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 17px; line-height: 1.45; color: #38251A; text-wrap: pretty;">A melhor carne que já comi. Mas não é só carne, é experiência e a experiência aqui é muito boa e cultural Uruguaia</blockquote>
+          <figcaption style="margin-top: 20px; font-family: 'Roboto Slab', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #832E1A;">Theo, avaliação no Google</figcaption>
+        </figure>
+        <figure data-reveal="1" style="margin: 0; background: #FFFDF8; border: 1px solid rgba(60, 30, 15, .12); box-shadow: 0 2px 5px rgba(35, 20, 10, .08); padding: 28px;">
+          <blockquote style="margin: 0; font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 17px; line-height: 1.45; color: #38251A; text-wrap: pretty;">Maravilhoso! Aquele carinho e simpatia uruguaia e hambiente decorado de acordo! Assado e acompanhamentos, todo muy rico! Encontramos nosso refúgio uruguaio em Joiville!</blockquote>
+          <figcaption style="margin-top: 20px; font-family: 'Roboto Slab', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #832E1A;">Márcia Magrini, Local Guide</figcaption>
+        </figure>
+        <figure data-reveal="1" style="margin: 0; background: #FFFDF8; border: 1px solid rgba(60, 30, 15, .12); box-shadow: 0 2px 5px rgba(35, 20, 10, .08); padding: 28px;">
+          <blockquote style="margin: 0; font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 17px; line-height: 1.45; color: #38251A; text-wrap: pretty;">Maravilhoso!!! Moro em Joinville há 7 anos é só agora que descobri um pedacinho da minha terra aqui!!!!</blockquote>
+          <figcaption style="margin-top: 20px; font-family: 'Roboto Slab', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #832E1A;">Constanza Ruiz Diaz Olivella, avaliação no Google</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section id="autenticidade" style="background: #38251A; color: #FFF8E9;">
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 380px), 1fr));">
+      <div style="padding: clamp(44px, 6vw, 84px) clamp(24px, 5vw, 72px); display: flex; flex-direction: column; justify-content: center;">
+        <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: #D8C19E; margin-bottom: 18px;">A casa</p>
+        <h2 style="font-family: 'Roboto Slab', Georgia, serif; font-weight: 900; font-size: clamp(32px, 4.6vw, 58px); line-height: .93; letter-spacing: -0.035em; text-transform: uppercase; max-width: 18ch;">O dono é uruguaio. A carne também.</h2>
+        <div style="display: flex; flex-direction: column; gap: 16px; max-width: 52ch; margin-top: 26px;">
+          <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 17px; line-height: 1.55; color: #FFF8E9; text-wrap: pretty;">A Figari faz parrilla como se faz no Rio da Prata. Fogo de lenha, grelha inclinada, sal grosso e tempo. Nada de fumaça de mentira nem tempero para disfarçar corte ruim.</p>
+          <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 17px; line-height: 1.55; color: #FFF8E9; text-wrap: pretty;">Os cortes chegam do Uruguai por um fornecedor exclusivo, a MFoods, e são das raças Hereford e Angus. É o mesmo padrão de carne que se come em Montevidéu, servido a poucos minutos do centro de Joinville.</p>
+          <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 17px; line-height: 1.55; color: #D8C19E; text-wrap: pretty;">Em 2021 a revista DUO trouxe uma matéria sobre a experiência da parrilla uruguaia aqui na cidade.</p>
+        </div>
+      </div>
+      <div style="position: relative; min-height: 420px;">
+        <img src="img/parrilla-lenha-acesa.png" alt="Parrilla a lenha acesa da Figari com cortes na grelha e prateleira de bebidas" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; filter: contrast(1.08) saturate(1.05) sepia(.05);" />
+      </div>
+    </div>
+  </section>
+
+  <section id="parrilla" style="position: relative; min-height: min(70vh, 560px); display: flex; align-items: center; overflow: hidden;">
+    <img src="img/bife-de-chorizo.jpg" alt="Bife de chorizo uruguaio fatiado na tábua com sal grosso" style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; object-position: center 55%; filter: contrast(1.08) saturate(1.05) sepia(.05);" />
+    <div style="position: absolute; inset: 0; background: rgba(22, 9, 3, .3);"></div>
+    <div style="position: relative; width: min(1180px, calc(100% - 40px)); margin-inline: auto; padding: 70px 0; display: flex; justify-content: flex-end;">
+      <div data-reveal="1" style="background: rgba(37, 22, 15, .94); color: #FFF8E9; padding: clamp(28px, 4vw, 44px); max-width: 460px;">
+        <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-weight: 700; font-size: 12px; letter-spacing: 0.24em; text-transform: uppercase; color: #D8C19E; margin-bottom: 14px;">Da grelha</p>
+        <h2 style="font-family: 'Roboto Slab', Georgia, serif; font-weight: 900; font-size: clamp(30px, 3.6vw, 46px); line-height: .93; letter-spacing: -0.035em; text-transform: uppercase;">Bife de chorizo</h2>
+        <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 17px; line-height: 1.55; margin-top: 18px;">O corte que mais sai da casa. Grosso, marmorizado, selado na brasa e servido no ponto que você pedir.</p>
+        <div style="height: 1px; background: rgba(216, 193, 158, .28); margin: 26px 0;"></div>
+        <h3 style="font-family: 'Roboto Slab', Georgia, serif; font-weight: 900; font-size: 20px; letter-spacing: -0.01em; text-transform: uppercase;">Chivito uruguaio</h3>
+        <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 16px; line-height: 1.5; margin-top: 10px; color: #FFF8E9;">O lanche clássico do Uruguai: filé mignon, presunto, mussarela, alface, tomate, maionese, cebolinha e ovo no pão.</p>
+        <a href="{{ waUrl }}" target="_blank" rel="noopener" style="display: inline-block; margin-top: 26px; color: #FFF8E9; border: 1px solid #FFF8E9; padding: 14px 24px; font-family: 'Roboto Slab', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: background 160ms ease;" style-hover="background: rgba(255, 248, 233, .14); color: #FFF8E9;">Pedir ou reservar</a>
+      </div>
+    </div>
+  </section>
+
+  <sc-if value="{{ mostrarAlmoco }}" hint-placeholder-val="{{ true }}">
+    <section style="background: #F9EAD5; padding: clamp(36px, 5vw, 56px) 0; border-block: 1px solid #DCC9AA;">
+      <div style="width: min(1040px, calc(100% - 40px)); margin-inline: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 22px;">
+        <div>
+          <h2 style="font-family: 'Roboto Slab', Georgia, serif; font-weight: 900; font-size: clamp(26px, 3vw, 38px); line-height: .95; letter-spacing: -0.03em; text-transform: uppercase; color: #25160F;">Almoço executivo, R$ 55</h2>
+          <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 16px; color: #38251A; margin-top: 10px;">De quarta a sexta, das 11h às 15h.</p>
+        </div>
+        <a href="{{ waUrlAlmoco }}" target="_blank" rel="noopener" style="background: #832E1A; border: 1px solid #6F2516; color: #FFF8E9; padding: 15px 26px; font-family: 'Roboto Slab', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: background 160ms ease;" style-hover="background: #6F2516; color: #FFF8E9;">Garantir mesa no almoço</a>
+      </div>
+    </section>
+  </sc-if>
+
+  <section id="galeria" style="background: #FCF1DB; padding: clamp(48px, 7vw, 78px) 0;">
+    <div style="width: min(1180px, calc(100% - 40px)); margin-inline: auto;">
+      <h2 style="font-family: 'Roboto Slab', Georgia, serif; font-weight: 900; font-size: clamp(30px, 4.4vw, 54px); line-height: .95; letter-spacing: -0.035em; text-transform: uppercase; color: #25160F;">A casa por dentro</h2>
+      <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 17px; color: #7A6858; margin-top: 12px; max-width: 54ch;">Fotos da parrilla, dos cortes e do salão. Sem produção de estúdio, é o que sai da grelha todos os dias.</p>
+      <div style="columns: 300px 3; column-gap: 12px; margin-top: 32px;">
+        <figure data-reveal="1" style="margin: 0 0 12px; break-inside: avoid;">
+          <img src="img/parrilla-fogo-brasa.jpg" alt="Fogo e brasa na parrilla da Figari com cortes assando na grelha inclinada" style="width: 100%; height: auto; filter: contrast(1.08) saturate(1.05) sepia(.05);" />
+        </figure>
+        <figure data-reveal="1" style="margin: 0 0 12px; break-inside: avoid;">
+          <img src="img/mesa-servida.jpg" alt="Mesa servida na Figari com carne, arroz e panelinha de ferro" style="width: 100%; height: auto; filter: contrast(1.08) saturate(1.05) sepia(.05);" />
+        </figure>
+        <figure data-reveal="1" style="margin: 0 0 12px; break-inside: avoid;">
+          <img src="img/cortes-na-grelha.jpg" alt="Cortes uruguaios dourando na grelha com pimentão ao lado" style="width: 100%; height: auto; filter: contrast(1.08) saturate(1.05) sepia(.05);" />
+        </figure>
+        <figure data-reveal="1" style="margin: 0 0 12px; break-inside: avoid;">
+          <img src="img/salao-quadros.jpg" alt="Parede do salão da Figari com quadros antigos sobre pintura terracota" style="width: 100%; height: auto; filter: contrast(1.08) saturate(1.05) sepia(.05);" />
+        </figure>
+        <figure data-reveal="1" style="margin: 0 0 12px; break-inside: avoid;">
+          <img src="img/prato-servido.jpg" alt="Prato servido na Figari com carne, batatas na chapa de ferro, arroz e salada" style="width: 100%; height: auto; filter: contrast(1.08) saturate(1.05) sepia(.05);" />
+        </figure>
+        <figure data-reveal="1" style="margin: 0 0 12px; break-inside: avoid;">
+          <img src="img/corte-ao-ponto.jpg" alt="Corte de carne uruguaia fatiado ao ponto com sal grosso na tábua" style="width: 100%; height: auto; filter: contrast(1.08) saturate(1.05) sepia(.05);" />
+        </figure>
+        <figure data-reveal="1" style="margin: 0 0 12px; break-inside: avoid;">
+          <img src="img/bife-fatiado-marca.jpg" alt="Bife fatiado na tábua com a marca Figari, la auténtica parrilla uruguaya" style="width: 100%; height: auto; filter: contrast(1.08) saturate(1.05) sepia(.05);" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section style="background: #F9EAD5; padding: clamp(48px, 7vw, 78px) 0; border-top: 1px solid #DCC9AA;">
+    <div style="width: min(1040px, calc(100% - 40px)); margin-inline: auto;">
+      <h2 style="font-family: 'Roboto Slab', Georgia, serif; font-weight: 900; font-size: clamp(30px, 4.4vw, 54px); line-height: .95; letter-spacing: -0.035em; text-transform: uppercase; color: #25160F;">Reservar leva um minuto</h2>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; margin-top: 34px;">
+        <div style="background: #FFFDF8; border: 1px solid rgba(60, 30, 15, .12); padding: 26px;">
+          <p style="font-family: 'Roboto Slab', serif; font-weight: 900; font-size: 30px; color: #832E1A; line-height: 1;">01</p>
+          <h3 style="font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 19px; text-transform: uppercase; letter-spacing: -0.01em; color: #25160F; margin-top: 14px;">Chame no WhatsApp</h3>
+          <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #38251A; margin-top: 8px;">É por ali que a casa recebe reserva e delivery.</p>
+        </div>
+        <div style="background: #FFFDF8; border: 1px solid rgba(60, 30, 15, .12); padding: 26px;">
+          <p style="font-family: 'Roboto Slab', serif; font-weight: 900; font-size: 30px; color: #832E1A; line-height: 1;">02</p>
+          <h3 style="font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 19px; text-transform: uppercase; letter-spacing: -0.01em; color: #25160F; margin-top: 14px;">Diga dia e quantas pessoas</h3>
+          <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #38251A; margin-top: 8px;">Se for comemoração, avise para deixarmos a mesa pronta.</p>
+        </div>
+        <div style="background: #FFFDF8; border: 1px solid rgba(60, 30, 15, .12); padding: 26px;">
+          <p style="font-family: 'Roboto Slab', serif; font-weight: 900; font-size: 30px; color: #832E1A; line-height: 1;">03</p>
+          <h3 style="font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 19px; text-transform: uppercase; letter-spacing: -0.01em; color: #25160F; margin-top: 14px;">Confirmamos e acendemos o fogo</h3>
+          <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 16px; line-height: 1.5; color: #38251A; margin-top: 8px;">A parrilla leva tempo, então a mesa já fica reservada no seu nome.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div style="position: relative; width: 100%; height: clamp(280px, 42vw, 480px); overflow: hidden;">
+    <img src="img/fachada-deck.png" alt="Fachada da Figari Parrilla Uruguaya em Joinville, deck de madeira coberto por trepadeiras e placa da casa" style="width: 100%; height: 100%; object-fit: cover; object-position: center 58%; filter: contrast(1.06) saturate(1.03) sepia(.04);" />
+  </div>
+
+  <section id="local" style="background: #25160F; color: #FFF8E9; padding: clamp(48px, 7vw, 84px) 0;">
+    <div style="width: min(1180px, calc(100% - 40px)); margin-inline: auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 40px 32px;">
+      <div>
+        <h2 style="font-family: 'Roboto Slab', Georgia, serif; font-weight: 900; font-size: clamp(30px, 4.2vw, 50px); line-height: .93; letter-spacing: -0.035em; text-transform: uppercase; max-width: 14ch;">Onde a lenha queima</h2>
+        <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 17px; line-height: 1.55; margin-top: 20px; max-width: 34ch;">Rua Joaçaba, 74, Sala 6<br />Saguaçu, Joinville, SC<br />Centro Comercial Joaçaba</p>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=Figari+Parrilla+Uruguaya+Rua+Joa%C3%A7aba+74+Joinville" target="_blank" rel="noopener" style="display: inline-block; margin-top: 22px; color: #FFF8E9; border: 1px solid #FFF8E9; padding: 13px 22px; font-family: 'Roboto Slab', serif; font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; transition: background 160ms ease;" style-hover="background: rgba(255, 248, 233, .14); color: #FFF8E9;">Abrir no mapa</a>
+      </div>
+      <div>
+        <h3 style="font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #D8C19E;">Horários</h3>
+        <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 18px;">
+          <div style="display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid rgba(216, 193, 158, .2); padding-bottom: 12px;">
+            <span style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 16px;">Almoço, quarta a sexta</span>
+            <span style="font-family: 'Roboto Slab', serif; font-size: 15px; font-weight: 700;">11h às 15h</span>
+          </div>
+          <div style="display: flex; justify-content: space-between; gap: 16px; border-bottom: 1px solid rgba(216, 193, 158, .2); padding-bottom: 12px;">
+            <span style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 16px;">Jantar, quinta a sábado</span>
+            <span style="font-family: 'Roboto Slab', serif; font-size: 15px; font-weight: 700;">18h às 23h</span>
+          </div>
+          <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 15px; color: #D8C19E;">Pedidos da cozinha até as 22h no jantar.</p>
+        </div>
+      </div>
+      <div>
+        <h3 style="font-family: 'Roboto Slab', serif; font-weight: 700; font-size: 14px; letter-spacing: 0.16em; text-transform: uppercase; color: #D8C19E;">Fale com a casa</h3>
+        <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 16px; line-height: 1.55; margin-top: 18px; max-width: 32ch;">Reserva e delivery pelo WhatsApp. Fotos e novidades no Instagram.</p>
+        <div style="display: flex; gap: 10px; margin-top: 20px;">
+          <a href="{{ waUrl }}" target="_blank" rel="noopener" aria-label="Falar com a Figari no WhatsApp" style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; background: #832E1A; border: 1px solid #6F2516; color: #FFF8E9; transition: background 160ms ease;" style-hover="background: #6F2516; color: #FFF8E9;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path></svg>
+          </a>
+          <a href="{{ instagramUrl }}" target="_blank" rel="noopener" aria-label="Instagram da Figari Parrilla" style="display: flex; align-items: center; justify-content: center; width: 52px; height: 52px; border: 1px solid #FFF8E9; color: #FFF8E9; transition: background 160ms ease;" style-hover="background: rgba(255, 248, 233, .14); color: #FFF8E9;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"></circle></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: #38251A; color: #D8C19E; padding: 34px 0;">
+    <div style="width: min(1180px, calc(100% - 40px)); margin-inline: auto; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 16px;">
+      <div>
+        <div style="font-family: 'Roboto Slab', Georgia, serif; font-weight: 900; font-size: 20px; text-transform: uppercase; letter-spacing: -0.02em; color: #FFF8E9;">Figari</div>
+        <div style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; margin-top: 5px;">La auténtica parrilla uruguaya</div>
+      </div>
+      <p style="font-family: 'Roboto Condensed', Arial, sans-serif; font-size: 13px; letter-spacing: 0.1em; text-transform: uppercase;">Joinville, Santa Catarina</p>
+    </div>
+  </footer>
+
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <div style="height: 74px;"></div>
+  </sc-if>
+  <sc-if value="{{ isMobile }}" hint-placeholder-val="{{ false }}">
+    <a href="{{ waUrl }}" target="_blank" rel="noopener" style="position: fixed; left: 0; right: 0; bottom: 0; z-index: 70; display: flex; align-items: center; justify-content: center; gap: 10px; height: 62px; background: #832E1A; border-top: 1px solid #6F2516; color: #FFF8E9; font-family: 'Roboto Slab', serif; font-size: 14px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path></svg>
+      Reservar pelo WhatsApp
+    </a>
+  </sc-if>
+  <sc-if value="{{ isDesktop }}" hint-placeholder-val="{{ true }}">
+    <a href="{{ waUrl }}" target="_blank" rel="noopener" aria-label="Reservar pelo WhatsApp" style="position: fixed; right: 24px; bottom: 24px; z-index: 70; display: flex; align-items: center; justify-content: center; width: 58px; height: 58px; background: #832E1A; border: 1px solid #6F2516; color: #FFF8E9; box-shadow: 0 2px 5px rgba(35, 20, 10, .28); transition: background 160ms ease;" style-hover="background: #6F2516; color: #FFF8E9;">
+      <svg width="27" height="27" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.86.5 3.6 1.38 5.1L2 22l5.2-1.53a9.8 9.8 0 0 0 4.84 1.26c5.44 0 9.84-4.4 9.84-9.84C21.88 6.4 17.48 2 12.04 2Zm0 17.9c-1.6 0-3.1-.44-4.36-1.2l-.3-.18-3.08.9.9-3-.2-.32a7.98 7.98 0 0 1-1.24-4.26c0-4.44 3.62-8.06 8.06-8.06 4.44 0 8.06 3.62 8.06 8.06 0 4.44-3.62 8.06-8.06 8.06Zm4.5-5.86c-.24-.12-1.46-.72-1.68-.8-.22-.08-.38-.12-.54.12-.16.24-.62.8-.76.96-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.42-1.34-1.66-.14-.24-.02-.38.1-.5.12-.12.26-.3.38-.46.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.54-1.3-.74-1.78-.2-.46-.4-.4-.54-.4h-.46c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.32.98 2.48.12.16 1.68 2.68 4.08 3.66.57.25 1.02.4 1.37.5.58.19 1.1.16 1.52.1.46-.07 1.42-.58 1.62-1.14.2-.56.2-1.04.14-1.14-.06-.1-.22-.16-.46-.28Z"></path></svg>
+    </a>
+  </sc-if>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;whatsappMessage&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Olá! Gostaria de fazer uma reserva na Figari.&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Contato&quot;},&quot;mostrarAlmocoExecutivo&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Seções&quot;}}">
+class Component extends DCLogic {
+  state = { w: typeof window !== 'undefined' ? window.innerWidth : 1200, menuOpen: false };
+
+  componentDidMount() {
+    if (!this._onResize) {
+      this._onResize = () => this.setState({ w: window.innerWidth, menuOpen: window.innerWidth >= 900 ? false : this.state.menuOpen });
+      window.addEventListener('resize', this._onResize);
+    }
+    this._onResize();
+    requestAnimationFrame(this._onResize);
+    if ('ResizeObserver' in window) {
+      this._ro = new ResizeObserver(() => { this._onResize(); this._armReveal(); });
+      this._ro.observe(document.documentElement);
+    }
+    this._armReveal();
+  }
+
+  _armReveal() {
+    if (this._revealArmed) return;
+    if (!('IntersectionObserver' in window)) return;
+    const w = document.documentElement.clientWidth || window.innerWidth || 0;
+    const els0 = document.querySelectorAll('[data-reveal]');
+    if (w === 0 || els0.length === 0) {
+      if (this._revealRetry) window.clearTimeout(this._revealRetry);
+      this._revealRetry = window.setTimeout(() => this._armReveal(), 300);
+      return;
+    }
+    if (w < 900) return;
+    this._revealArmed = true;
+    {
+      const els = Array.from(document.querySelectorAll('[data-reveal]'));
+      els.forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'opacity 620ms ease ' + (i % 3) * 70 + 'ms, transform 620ms cubic-bezier(.2,.7,.2,1) ' + (i % 3) * 70 + 'ms';
+      });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+      els.forEach((el) => io.observe(el));
+    }
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this._onResize);
+    if (this._ro) this._ro.disconnect();
+    if (this._revealRetry) window.clearTimeout(this._revealRetry);
+  }
+
+  renderVals() {
+    const phone = '5547989042442';
+    const msg = this.props.whatsappMessage ?? 'Olá! Gostaria de fazer uma reserva na Figari.';
+    if (!this._measured && typeof window !== 'undefined') {
+      this._measured = true;
+      const remeasure = () => {
+        this.setState({ w: window.innerWidth });
+        this._armReveal();
+      };
+      setTimeout(remeasure, 0);
+      setTimeout(remeasure, 150);
+      setTimeout(remeasure, 600);
+      window.addEventListener('load', remeasure);
+      if (!this._onResize) {
+        this._onResize = () => this.setState({ w: window.innerWidth, menuOpen: window.innerWidth >= 900 ? false : this.state.menuOpen });
+        window.addEventListener('resize', this._onResize);
+      }
+    }
+    const narrow = this.state.w < 900;
+    return {
+      isMobile: this.state.w < 760,
+      isDesktop: this.state.w >= 760,
+      isWide: !narrow,
+      isNarrow: narrow,
+      menuOpen: narrow && this.state.menuOpen,
+      toggleMenu: () => this.setState((s) => ({ menuOpen: !s.menuOpen })),
+      closeMenu: () => this.setState({ menuOpen: false }),
+      mostrarAlmoco: this.props.mostrarAlmocoExecutivo ?? true,
+      instagramUrl: 'https://www.instagram.com/figariparrilla/',
+      waUrl: 'https://wa.me/' + phone + '?text=' + encodeURIComponent(msg),
+      waUrlAlmoco: 'https://wa.me/' + phone + '?text=' + encodeURIComponent('Olá! Queria reservar mesa para o almoço executivo.')
+    };
+  }
+}
+</script>
+</body>
+</html>
